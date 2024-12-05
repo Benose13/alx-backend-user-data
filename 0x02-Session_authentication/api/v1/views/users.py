@@ -29,12 +29,6 @@ def view_one_user(user_id: str = None) -> str:
     if not user:
         abort(404)
     return jsonify(user.to_json())
-    
-
-@app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
-def get_user(user_id):
-    """Retrieve a user by their ID or 'me'"""
-    
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
